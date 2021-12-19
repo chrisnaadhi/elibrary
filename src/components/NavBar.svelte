@@ -8,7 +8,11 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a href="/#" class="navbar-item">
+      <a
+        href="/"
+        class="navbar-item"
+        on:click|preventDefault={() => dispatch("nav", { menu: `beranda` })}
+      >
         <img
           src="https://upload.wikimedia.org/wikipedia/id/thumb/8/80/Lambang_Universitas_Padjadjaran.svg/241px-Lambang_Universitas_Padjadjaran.svg.png"
           alt="Logo Unpad"

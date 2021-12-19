@@ -1,6 +1,6 @@
-<div class="container m-5">
+<div class="container mt-5 mb-5">
   <div class="box">
-    <div class="columns is-centered">
+    <div class="columns is-centered has-text-centered">
       <slot />
     </div>
   </div>

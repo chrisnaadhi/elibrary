@@ -5,6 +5,9 @@
 
   // Route
   import Member from "./pages/Member.svelte";
+  import Profil from "./pages/Profil.svelte";
+  import Koleksi from "./pages/Koleksi.svelte";
+  import Panduan from "./pages/Panduan.svelte";
 
   let menu = "beranda";
 
@@ -21,6 +24,12 @@
     <Layanan />
   {:else if menu === "member"}
     <Member />
+  {:else if menu === "panduan"}
+    <Panduan />
+  {:else if menu === "profil"}
+    <Profil />
+  {:else if menu === "koleksi"}
+    <Koleksi />
   {/if}
 </main>
 
