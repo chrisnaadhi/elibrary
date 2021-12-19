@@ -1,3 +1,10 @@
+<script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
+  const navBarMenu = ["Beranda", "Profil", "Koleksi", "Panduan"];
+</script>
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
@@ -26,13 +33,25 @@
 
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a href="/#" class="navbar-item"> Beranda </a>
-        <a href="/#" class="navbar-item"> Profil </a>
-        <a href="/#" class="navbar-item"> Koleksi </a>
-        <a href="/#" class="navbar-item"> Panduan </a>
+        {#each navBarMenu as nav}
+          <a
+            href="/"
+            class="navbar-item"
+            on:click|preventDefault={() =>
+              dispatch("nav", { menu: `${nav.toLowerCase()}` })}
+          >
+            {nav}
+          </a>
+        {/each}
         <div class="navbar-item">
           <div class="buttons">
-            <button class="button is-primary"> Login </button>
+            <button
+              class="button is-primary"
+              on:click|preventDefault={() =>
+                dispatch("nav", { menu: "member" })}
+            >
+              Login
+            </button>
             <button class="button is-primary is-outlined"> Register </button>
           </div>
         </div>
